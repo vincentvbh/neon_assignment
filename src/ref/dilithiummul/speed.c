@@ -19,6 +19,7 @@ static int cmp_uint64(const void *a, const void *b){
 
 int main(void){
 
+    polyvecl src1_vec, src2_vec;
     poly src1, src2;
     poly des;
 
@@ -48,6 +49,15 @@ int main(void){
     }
     qsort(times, ITERATIONS, sizeof(uint64_t), cmp_uint64);
     printf("poly_pointwise_montgomery: %ld\n", times[ITERATIONS >> 1]);
+
+    for(size_t i = 0; i < ITERATIONS; i++){
+        t0 = hal_get_time();
+        polyvecl_pointwise_acc_montgomery(&des, &src1_vec, &src2_vec);
+        t1 = hal_get_time();
+        times[i] = t1 - t0;
+    }
+    qsort(times, ITERATIONS, sizeof(uint64_t), cmp_uint64);
+    printf("polyvecl_pointwise_acc_montgomery: %ld\n", times[ITERATIONS >> 1]);
 
 
 }

@@ -13,6 +13,7 @@ make
 ## Sample output
 ```
 poly_mul passed!
+matrix-to-vector mul passed!
 ```
 
 # Benchmark
@@ -22,9 +23,10 @@ poly_mul passed!
 
 ## Sample output
 ```
-poly_ntt: 9462
-poly_invntt_tomont: 10950
+poly_ntt: 9452
+poly_invntt_tomont: 10931
 poly_pointwise_montgomery: 1559
+polyvecl_pointwise_acc_montgomery: 8631
 ```
 
 # What you can modify
@@ -54,16 +56,19 @@ test.c
 You will get 3 points if all the followings are reached.
 * `poly_ntt < 2800`
 * `poly_invntt_tomont < 3200`
-* `poly_pointwise_montgomery < TBA`
+* `poly_pointwise_montgomery < 700`
+* `polyvecl_pointwise_acc_montgomery < 1500`
 
 You will get 2 points if all the followings are reached.
 * `poly_ntt < 3500`
 * `poly_invntt_tomont < 4000`
-* `poly_pointwise_montgomery < TBA`
+* `poly_pointwise_montgomery < 850`
+* `polyvecl_pointwise_acc_montgomery < 2400`
 
 You will get 1 point if all the followings are reached.
 * `poly_ntt < 5000`
 * `poly_invntt_tomont < 5500`
-* `poly_pointwise_montgomery < TBA`
+* `poly_pointwise_montgomery < 1100`
+* `polyvecl_pointwise_acc_montgomery < 5000`
 
 

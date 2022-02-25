@@ -6,6 +6,10 @@
 #define D 13
 #define ROOT_OF_UNITY 1753
 
+#define K 6
+#define L 5
+
+
 #endif
 
 
