@@ -49,5 +49,21 @@ speed.c
 test.c
 ```
 
+# Criteria
+
+You will get 3 points if all the followings are reached.
+* `poly_ntt < 2800`
+* `poly_invntt_tomont < 3200`
+* `poly_pointwise_montgomery < TBA`
+
+You will get 2 points if all the followings are reached.
+* `poly_ntt < 3500`
+* `poly_invntt_tomont < 4000`
+* `poly_pointwise_montgomery < TBA`
+
+You will get 1 point if all the followings are reached.
+* `poly_ntt < 5000`
+* `poly_invntt_tomont < 5500`
+* `poly_pointwise_montgomery < TBA`
 
 

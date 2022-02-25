@@ -47,5 +47,23 @@ speed.c
 test.c
 ```
 
+# Criteria
+
+You will get 3 points if all the followings are reached.
+* `InnerProd < 17000`
+* `MatrixVecotrMul < 38000`
+
+You will get 2 points if all the followings are reached.
+* `InnerProd < 20000`
+* `MatrixVecotrMul < 54000`
+
+You will get 1 point if all the followings are reached.
+* `InnerProd < 25000`
+* `MatrixVecotrMul < 74000`
+
+
+
+
+
 
 
