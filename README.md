@@ -34,10 +34,22 @@ In particular, we focus on
 - Architecture: Armv8-A, aarch64
 - OS: it is shipped with an OS, but we will use ubuntu
 
+# What you have to do before programming
+- Install ubuntu 21.04
+- Install gcc 10
+
 # Install ubuntu yourself
 - Raspberry pi Imager: https://www.raspberrypi.com/software/
 - ubuntu 21.04: https://ubuntu.com/download/raspberry-pi
 
+# Install gcc
+```
+sudo apt-get install gcc
+```
+After that, check the version of gcc with
+```
+gcc --version
+```
 
 
 
