@@ -21,7 +21,7 @@ poly_Rq_mul_small passed!
 
 ## Sample output
 ```
-polymul_small: 91562
+poly_Rq_mul_small: 91562
 ```
 
 # What you can modify

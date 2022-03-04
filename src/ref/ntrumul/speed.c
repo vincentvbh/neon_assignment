@@ -31,7 +31,7 @@ int main(void){
         times[i] = t1 - t0;
     }
     qsort(times, ITERATIONS, sizeof(uint64_t), cmp_uint64);
-    printf("polymul_small: %ld\n", times[ITERATIONS >> 1]);
+    printf("poly_Rq_mul_small: %ld\n", times[ITERATIONS >> 1]);
 
 }
 
