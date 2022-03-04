@@ -13,6 +13,10 @@ In particular, we focus on
 - `saber`
 - `sntrup761/ntrulpr761`
 
+# Important notice
+You are asked to program according to your own understanding.
+
+
 # Polynomial multiplications and related operations
 - Dilithium:
     - Stripped from https://github.com/PQClean/PQClean/tree/master/crypto_sign/dilithium3/clean
@@ -50,6 +54,5 @@ After that, check the version of gcc with
 ```
 gcc --version
 ```
-
 
 
