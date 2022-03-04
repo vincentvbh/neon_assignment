@@ -25,7 +25,7 @@ static inline void schoolbook_KxK(uint16_t r[2 * K], const uint16_t a[K], const 
 static void toom4_k2x2_interpolate(uint16_t r[2 * L], const uint16_t a[63 * 2 * K]);
 static inline void k2x2_interpolate(uint16_t r[2 * M], const uint16_t a[18 * K]);
 
-void poly_Rq_mul(poly *r, const poly *a, const poly *b) {
+void poly_Rq_mul_small(poly *r, const poly *a, const poly *b) {
     size_t i;
     uint16_t ab[2 * L];
 
@@ -43,10 +43,6 @@ void poly_Rq_mul(poly *r, const poly *a, const poly *b) {
     for (i = 0; i < NTRU_N; i++) {
         r->coeffs[i] = ab[i] + ab[NTRU_N + i];
     }
-}
-
-void poly_Rq_mul_small(poly *r, const poly *a, const poly *b){
-    poly_Rq_mul(r, a, b);
 }
 
 static void toom4_k2x2_mul(uint16_t ab[2 * L], const uint16_t a[L], const uint16_t b[L]) {

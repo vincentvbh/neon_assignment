@@ -13,7 +13,6 @@ typedef struct {
 } poly;
 
 
-void poly_Rq_mul(poly *r, const poly *a, const poly *b);
 void poly_Rq_mul_small(poly *r, const poly *a, const poly *b);
 
 #endif

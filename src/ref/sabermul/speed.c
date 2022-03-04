@@ -33,15 +33,15 @@ int main(void){
     for(size_t i = 0; i < ITERATIONS; i++){
         t0 = hal_get_time();
         InnerProd(&res, cipher, secret);
-	t1 = hal_get_time();
-	times[i] = t1 - t0;
+        t1 = hal_get_time();
+        times[i] = t1 - t0;
     }
     qsort(times, ITERATIONS, sizeof(uint64_t), cmp_uint64);
     printf("InnerProd: %ld\n", times[ITERATIONS >> 1]);
 
     for(size_t i = 0; i < ITERATIONS; i++){
         t0 = hal_get_time();
-	MatrixVectorMul(res_vec, (const poly (*)[SABER_L])mat, secret);
+        MatrixVectorMul(res_vec, (const poly (*)[SABER_L])mat, secret);
         t1 = hal_get_time();
         times[i] = t1 - t0;
     }

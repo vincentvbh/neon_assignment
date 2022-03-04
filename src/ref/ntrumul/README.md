@@ -11,7 +11,6 @@ make
 
 ## Sample output
 ```
-poly_Rq_mul passed!
 poly_Rq_mul_small passed!
 ```
 
@@ -22,7 +21,6 @@ poly_Rq_mul_small passed!
 
 ## Sample output
 ```
-polymul: 91525
 polymul_small: 91562
 ```
 
@@ -43,4 +41,20 @@ params.h
 speed.c
 test.c
 ```
+
+# Criteria
+
+You will get 3 points if all the followings are reached.
+* `polymul_small < 48000`
+
+You will get 2 points if all the followings are reached.
+* `polymul_small < 62000`
+
+You will get 1 point if all the followings are reached.
+* `polymul_small < 78000`
+
+
+
+
+
 

@@ -26,18 +26,9 @@ int main(void){
 
     for(size_t i = 0; i < ITERATIONS; i++){
         t0 = hal_get_time();
-        poly_Rq_mul(&a, &b, &c);
-	t1 = hal_get_time();
-	times[i] = t1 - t0;
-    }
-    qsort(times, ITERATIONS, sizeof(uint64_t), cmp_uint64);
-    printf("polymul: %ld\n", times[ITERATIONS >> 1]);
-
-    for(size_t i = 0; i < ITERATIONS; i++){
-        t0 = hal_get_time();
         poly_Rq_mul_small(&a, &b, &c);
-	t1 = hal_get_time();
-	times[i] = t1 - t0;
+        t1 = hal_get_time();
+        times[i] = t1 - t0;
     }
     qsort(times, ITERATIONS, sizeof(uint64_t), cmp_uint64);
     printf("polymul_small: %ld\n", times[ITERATIONS >> 1]);

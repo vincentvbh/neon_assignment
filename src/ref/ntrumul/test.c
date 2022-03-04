@@ -52,43 +52,22 @@ int main(void){
 
         for(size_t j = 0; j < NTRU_N; j++){
             src1.coeffs[j] = rand() % NTRU_Q;
-	    src2.coeffs[j] = rand() % NTRU_Q;
-	}
+            src2.coeffs[j] = rand() % 3;
+            if(src2.coeffs[j] == 2){
+                src2.coeffs[j] = NTRU_Q - 1;
+            }
+        }
         for(size_t j = NTRU_N; j < POLY_N; j++){
             src1.coeffs[j] = 0;
-	    src2.coeffs[j] = 0;
-	}
+            src2.coeffs[j] = 0;
+        }
 
         schoolbook(&ref, &src1, &src2);
-	poly_Rq_mul(&res, &src1, &src2);
-
-        for(size_t j = 0; j < NTRU_N; j++){
-            assert(MODQ(ref.coeffs[j]) == MODQ(res.coeffs[j]));
-	}
-
-    }
-    printf("poly_Rq_mul passed!\n");
-
-    for(size_t i = 0; i < ITERATIONS; i++){
-        
-	for(size_t j = 0; j < NTRU_N; j++){
-            src1.coeffs[j] = rand() % NTRU_Q;
-	    src2.coeffs[j] = rand() % 3;
-	    if(src2.coeffs[j] == 2){
-                src2.coeffs[j] = NTRU_Q - 1;
-	    }
-	}
-        for(size_t j = NTRU_N; j < POLY_N; j++){
-            src1.coeffs[j] = 0;
-	    src2.coeffs[j] = 0;
-	}
-
-	schoolbook(&ref, &src1, &src2);
         poly_Rq_mul_small(&res, &src1, &src2);
 
         for(size_t j = 0; j < NTRU_N; j++){
             assert(MODQ(ref.coeffs[j]) == MODQ(res.coeffs[j]));
-	}
+        }
 
     }
     printf("poly_Rq_mul_small passed!\n");
