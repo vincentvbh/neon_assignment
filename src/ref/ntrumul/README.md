@@ -42,16 +42,29 @@ speed.c
 test.c
 ```
 
-# Criteria
+# Thresholds
 
-You will get 3 points if all the followings are reached.
+You will get 25 points if the following is reached.
 * `polymul_small < 48000`
 
-You will get 2 points if all the followings are reached.
-* `polymul_small < 62000`
+You will get 15 points if the following is reached.
+* `polymul_small < 60000`
 
-You will get 1 point if all the followings are reached.
-* `polymul_small < 78000`
+You will get 5 points if the following is reached.
+* `polymul_small < 73000`
+
+# State of the art
+Paper **Fast NEON-Based Multiplication for Lattice-Based NIST Post-quantum Cryptography Finalists** at
+https://link.springer.com/chapter/10.1007/978-3-030-81293-5_13
+* `polymul_small < 56000`
+You're right, we believe it is possible to outperform the state of the art.
+
+
+
+
+
+
+
 
 
 
