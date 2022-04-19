@@ -14,6 +14,7 @@ make
 ```
 InnerProd passed!
 MatrixVectorMul passed!
+InnerProd (Encrypt) + MatrixVectorMul passed!
 ```
 
 # Benchmark
@@ -23,9 +24,9 @@ MatrixVectorMul passed!
 
 ## Sample output
 ```
-InnerProd (Decrypt): 42427
-MatrixVectorMul: 125924
-InnerProd (Encrypt) + MatrixVectorMul: 42427 + 125924
+InnerProd: 42828
+MatrixVectorMul: 127860
+InnerProd (Enc) + MatrixVectorMul: 168264
 ```
 
 # State of the art
@@ -33,7 +34,7 @@ Paper **Neon NTT: Faster Dilithium, Kyber, and Saber on Cortex-A72 and Apple M1*
 https://tches.iacr.org/index.php/TCHES/article/view/9295.
 * `InnerProd (Decrypt) < 16000`
 * `MatrixVecotrMul < 36000`
-* `InnerProd (Encrypt) + MatrixVectorMul < 9300 + 36000`
+* `InnerProd (Encrypt) + MatrixVectorMul < 45300`
 
 
 

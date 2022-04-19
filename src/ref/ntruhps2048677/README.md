@@ -44,14 +44,14 @@ test.c
 
 # Thresholds
 
-You will get 25 points if the following is reached.
-* `polymul_small < 48000`
+## First threshold
+* `polymul_small < 78000`
 
-You will get 15 points if the following is reached.
+## Second threshold
 * `polymul_small < 62000`
 
-You will get 5 points if the following is reached.
-* `polymul_small < 78000`
+## Third threshold
+* `polymul_small < 48000`
 
 # State of the art
 Paper **Fast NEON-Based Multiplication for Lattice-Based NIST Post-quantum Cryptography Finalists** at

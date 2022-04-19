@@ -44,14 +44,16 @@ test.c
 
 # Thresholds
 
-You will get 25 points if the following is reached.
-* `polymul_small < 75000`
+## First threshold
+* `polymul_small < 140000`
 
-You will get 15 points if the following is reached.
+## Second threshold
 * `polymul_small < 90000`
 
-You will get 5 points if the following is reached.
-* `polymul_small < 140000`
+## Third threshold
+* `polymul_small < 75000`
+
+
 
 
 

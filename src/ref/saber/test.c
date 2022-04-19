@@ -21,6 +21,8 @@ void poly_add(poly *des, const poly *src1, const poly *src2);
 void MatrixVectorMul_ref(poly c[SABER_L], const poly A[SABER_L][SABER_L], const poly s[SABER_L]);
 void InnerProd_ref(poly *c, const poly b[SABER_L], const poly s[SABER_L]);
 
+void Enc_MatrixVectorMul_InnerProd_ref(poly bp[SABER_L], poly *c, const poly A[SABER_L][SABER_L], const poly b[SABER_L], const poly s[SABER_L]);
+
 int main(void){
 
     poly ref;
@@ -84,6 +86,43 @@ int main(void){
     }
     printf("MatrixVectorMul passed!\n");
 
+    for(size_t i = 0; i < ITERATIONS; i++){
+
+        for(size_t j = 0; j < SABER_L; j++){
+            for(size_t k = 0; k < SABER_N; k++){
+                secret[j].coeffs[k] = rand() % (SABER_MU + 1);
+            }
+        }
+
+        for(size_t j = 0; j < SABER_L; j++){
+            for(size_t k = 0; k < SABER_L; k++){
+                for(size_t h = 0; h < SABER_N; h++){
+                    mat[j][k].coeffs[h] = rand() & (SABER_Q - 1);
+                }
+            }
+        }
+
+        for(size_t j = 0; j < SABER_L; j++){
+            for(size_t k = 0; k < SABER_N; k++){
+                cipher[j].coeffs[k] = rand() & (SABER_Q - 1);
+            }
+        }
+
+        Enc_MatrixVectorMul_InnerProd_ref(ref_vec, &ref, (const poly (*)[SABER_L])mat, cipher, secret);
+        Enc_MatrixVectorMul_InnerProd(res_vec, &res, (const poly (*)[SABER_L])mat, cipher, secret);
+
+        for(size_t j = 0; j < SABER_N; j++){
+            assert( MODQ(ref.coeffs[j]) == MODQ(res.coeffs[j]) );
+        }
+
+        for(size_t j = 0; j < SABER_L; j++){
+            for(size_t k = 0; k < SABER_N; k++){
+                assert( MODQ(ref_vec[j].coeffs[k]) == MODQ(res_vec[j].coeffs[k]) );
+            }
+        }
+
+    }
+    printf("InnerProd (Encrypt) + MatrixVectorMul passed!\n");
 
 
 }
@@ -130,9 +169,9 @@ void MatrixVectorMul_ref(poly c[SABER_L], const poly A[SABER_L][SABER_L], const 
     poly tmp;
 
     for (size_t i = 0; i < SABER_L; i++) {
-        schoolbook(&c[i], &A[0][i], &s[0]);
+        schoolbook(&c[i], &A[i][0], &s[0]);
         for (size_t j = 1; j < SABER_L; j++) {
-            schoolbook(&tmp, &A[j][i], &s[j]);
+            schoolbook(&tmp, &A[i][j], &s[j]);
             poly_add(&c[i], &c[i], &tmp);
         }
     }
@@ -150,7 +189,13 @@ void InnerProd_ref(poly *c, const poly b[SABER_L], const poly s[SABER_L]) {
 }
 
 
+void Enc_MatrixVectorMul_InnerProd_ref(poly bp[SABER_L], poly *c, const poly A[SABER_L][SABER_L], const poly b[SABER_L], const poly s[SABER_L]){
 
+
+    MatrixVectorMul_ref(bp, (const poly (*)[SABER_L])A, s);
+    InnerProd_ref(c, b, s);
+
+}
 
 
 
