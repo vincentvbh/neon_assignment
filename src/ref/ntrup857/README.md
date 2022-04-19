@@ -45,13 +45,13 @@ test.c
 # Thresholds
 
 You will get 25 points if the following is reached.
-TBA
+* `polymul_small < 75000`
 
 You will get 15 points if the following is reached.
-TBA
+* `polymul_small < 90000`
 
 You will get 5 points if the following is reached.
-* `polymul_small < 160000`
+* `polymul_small < 140000`
 
 
 
