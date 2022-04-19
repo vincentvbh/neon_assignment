@@ -1,6 +1,0 @@
-
-# Source
-- SUPERCOP
-- PQClean
-
-
