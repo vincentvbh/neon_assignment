@@ -18,14 +18,21 @@ In particular, we focus on
     - You will get 15 points if you reach the second threshold
     - You will get 25 points if you reach the third threshold
 
-# Raspberry pi 4
-- CPU: Cortex-A72
-- Architecture: Armv8.0-A
-- OS: it is shipped with an OS, but we will use ubuntu 21.04
-
 # What you have to do before programming
 - Install ubuntu 21.04
 - Install gcc 10
+
+# What you have to do every time after booting the Raspberry pi 4
+```
+cd enable_ccr
+make install
+```
+
+# Raspberry pi 4
+I'll benchmark with the following.
+- CPU: Cortex-A72
+- Architecture: Armv8.0-A
+- OS: ubuntu 21.04
 
 # Install ubuntu yourself
 - Raspberry pi Imager: https://www.raspberrypi.com/software/
