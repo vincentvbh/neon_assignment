@@ -48,10 +48,10 @@ You will get 25 points if the following is reached.
 * `polymul_small < 48000`
 
 You will get 15 points if the following is reached.
-* `polymul_small < 60000`
+* `polymul_small < 62000`
 
 You will get 5 points if the following is reached.
-* `polymul_small < 73000`
+* `polymul_small < 78000`
 
 # State of the art
 Paper **Fast NEON-Based Multiplication for Lattice-Based NIST Post-quantum Cryptography Finalists** at
